@@ -5,7 +5,7 @@ import android.util.Log
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
-import com.app.coin.Presentation.MainViewModel
+import com.app.coin.Presentation.ViewModel.MainViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -19,7 +19,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         // viewModel= ViewModelProvider(this)[MainViewModel::class.java]
 
-        /*lifecycleScope.launch(Dispatchers.IO) {
+        lifecycleScope.launch(Dispatchers.IO) {
 
             viewModel.getAllCoins("1")
 
@@ -32,8 +32,8 @@ class MainActivity : AppCompatActivity() {
                     Log.e("error", state.error)
                 }
             }
-        }*/
-        lifecycleScope.launch(Dispatchers.IO) {
+        }
+        /*lifecycleScope.launch(Dispatchers.IO) {
             viewModel.getCoinDetails("bitcoin")
 
             viewModel.coinDetailsStatFlow.collect { state ->
@@ -45,6 +45,6 @@ class MainActivity : AppCompatActivity() {
                     Log.e("detailsError", state.error)
                 }
             }
-        }
+        }*/
     }
 }
