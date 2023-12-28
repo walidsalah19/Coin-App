@@ -1,7 +1,7 @@
 package com.app.coin.Data.DataSource
 
-import com.app.coin.Data.DataSource.DataClass.DataClass
-import com.app.coin.Data.DataSource.DataClass.DataClassItem
+import com.app.coin.Data.DataSource.DataClass.CoinDataClass.DataClass
+import com.app.coin.Data.DataSource.DataClass.CoinDetailsDataClass.CoinDetails
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Path
@@ -12,5 +12,5 @@ interface CoinInterface {
     suspend fun getCoin(@Query("page")page:String): Response<DataClass>
 
     @GET("/api/v3/coins/{id}")
-    suspend fun getCoinById(@Path("id")id:String): Response<DataClassItem>
+    suspend fun getCoinById(@Path("id") id:String): Response<CoinDetails>
 }

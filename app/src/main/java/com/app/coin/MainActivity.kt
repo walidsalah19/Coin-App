@@ -19,7 +19,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         // viewModel= ViewModelProvider(this)[MainViewModel::class.java]
 
-        lifecycleScope.launch(Dispatchers.IO) {
+        /*lifecycleScope.launch(Dispatchers.IO) {
 
             viewModel.getAllCoins("1")
 
@@ -27,24 +27,24 @@ class MainActivity : AppCompatActivity() {
                 if (state.isLoading) {
                     Log.e("loading", "Loading")
                 } else if (state.coinsList.isNotEmpty()) {
-                    Log.e("coins", state.coinsList.get(0).name)
+                    Log.e("coinsId", state.coinsList.get(0).id)
                 } else {
                     Log.e("error", state.error)
                 }
             }
-        }
-        lifecycleScope.launch {
-            viewModel.getCoinDetails("celestia")
+        }*/
+   /*     lifecycleScope.launch(Dispatchers.IO) {
+            viewModel.getCoinDetails("bitcoin")
 
             viewModel.coinDetailsStatFlow.collect { state ->
                 if (state.isLoading) {
                     Log.e("details", "Loading")
                 } else if (state.coinDetails?.name?.isNotEmpty() == true) {
-                    state.coinDetails?.let { Log.e("details", it.description) }
+                    state.coinDetails?.let { Log.e("detailsDes", it.description) }
                 } else {
                     Log.e("detailsError", state.error)
                 }
             }
-        }
+        }*/
     }
 }

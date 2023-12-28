@@ -52,16 +52,14 @@ class MainViewModel @Inject constructor(
         coinsDetailsUseCase(id).collect{
             when(it)
             {
-                is ResponseState.Success -> {
-                    _coinDetailsStatFlow.value= CoinDetailsState(coinDetails = it.toData()?: null)
+                is ResponseState.Success ->{
+                    _coinDetailsStatFlow.value = CoinDetailsState(coinDetails = it.data)
                 }
-                is ResponseState.Error->
-                {
-                    _coinDetailsStatFlow.value= CoinDetailsState(error = it.message)
+                is ResponseState.Loading ->{
+                    _coinDetailsStatFlow.value = CoinDetailsState(isLoading = true)
                 }
-                is ResponseState.Loading->
-                {
-                    _coinDetailsStatFlow.value= CoinDetailsState(isLoading = true)
+                is ResponseState.Error ->{
+                    _coinDetailsStatFlow.value = CoinDetailsState(error = it.message?:"An Unexpected Error")
                 }
                 else -> {}
             }

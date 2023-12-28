@@ -1,6 +1,7 @@
-package com.app.coin.Data.DataSource.DataClass
+package com.app.coin.Data.DataSource.DataClass.CoinDataClass
 
 import com.app.coin.Domain.Modeles.Coin
+import com.app.coin.Domain.Modeles.CoinDetail
 
 data class DataClassItem(
     val ath: Double,

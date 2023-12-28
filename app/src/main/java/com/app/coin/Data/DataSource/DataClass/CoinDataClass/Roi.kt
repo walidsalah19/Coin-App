@@ -1,4 +1,4 @@
-package com.app.coin.Data.DataSource.DataClass
+package com.app.coin.Data.DataSource.DataClass.CoinDataClass
 
 data class Roi(
     val currency: String,
