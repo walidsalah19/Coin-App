@@ -33,7 +33,7 @@ class MainActivity : AppCompatActivity() {
                 }
             }
         }*/
-   /*     lifecycleScope.launch(Dispatchers.IO) {
+        lifecycleScope.launch(Dispatchers.IO) {
             viewModel.getCoinDetails("bitcoin")
 
             viewModel.coinDetailsStatFlow.collect { state ->
@@ -45,6 +45,6 @@ class MainActivity : AppCompatActivity() {
                     Log.e("detailsError", state.error)
                 }
             }
-        }*/
+        }
     }
 }

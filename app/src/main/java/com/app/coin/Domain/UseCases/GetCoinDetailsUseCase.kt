@@ -18,7 +18,7 @@ class GetCoinDetailsUseCase @Inject constructor(
                 if (response.isSuccessful) {
                     val coin = response.body()
                     var details = coin?.let {
-                        it.toCoinDetails()
+                        it.toCoinDetail()
                     }
                     emit(ResponseState.Success(details))
                 } else {
