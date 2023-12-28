@@ -1,6 +1,7 @@
-package com.app.coin.Presentation.ViewModel
+package com.app.coin.Presentation.CoinsDetails
 
 import android.util.Log
+import androidx.lifecycle.ViewModel
 import com.app.coin.Data.Repostories.CoinRepository
 import com.app.coin.Domain.State.CoinDetailsState
 import com.app.coin.Domain.State.ResponseState
@@ -12,7 +13,7 @@ import javax.inject.Inject
 @HiltViewModel
 class CoinDetailsViewModel @Inject constructor(
     private val coinsDetailsUseCase: GetCoinDetailsUseCase
-) {
+):ViewModel() {
     private var _coinDetailsStatFlow= MutableStateFlow(CoinDetailsState())
     var coinDetailsStatFlow: MutableStateFlow<CoinDetailsState> =_coinDetailsStatFlow
     suspend fun getCoinDetails(id:String)

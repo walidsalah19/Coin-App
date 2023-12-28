@@ -1,4 +1,4 @@
-package com.app.coin.Presentation.ViewModel
+package com.app.coin.Presentation.Coins
 
 import android.util.Log
 import androidx.lifecycle.ViewModel
